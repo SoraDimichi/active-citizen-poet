@@ -15,7 +15,15 @@ const getEvents = (req, res) => Event.find({})
   });
 
 const createEvent = (req, res) => Event.create(
-  { name: req.body.name, link: req.body.link, owner: req.user._id },
+  {
+    name: req.body.name,
+    imageLink: req.body.imageLink,
+    owner: req.body.owner,
+    date: req.body.date,
+    address: req.body.address,
+    type: req.body.type,
+    verse: req.body.verse,
+  },
 )
   .then((event) => res.status(200).send(event))
   .catch((err) => {
