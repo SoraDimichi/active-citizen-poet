@@ -20,11 +20,7 @@ const eventSchema = new mongoose.Schema({
   verse: {
     type: String,
   },
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'user',
-    required: true,
-  },
+
   followers: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'user',
@@ -36,6 +32,10 @@ const eventSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now(),
+  },
+  owner: {
+    type: String,
+    required: true,
   },
 }, { versionKey: false });
 

@@ -1,7 +1,7 @@
 const Event = require('../models/event');
 
 // const NOT_FOUND = 404;
-// const BAD_REQUEST = 400;
+const BAD_REQUEST = 400;
 const INTERNAL_SERVER_ERROR = 500;
 
 const getEvents = (req, res) => Event.find({})
@@ -14,20 +14,20 @@ const getEvents = (req, res) => Event.find({})
     }
   });
 
-// const createCard = (req, res) => Card.create(
-//   { name: req.body.name, link: req.body.link, owner: req.user._id },
-// )
-//   .then((card) => res.status(200).send(card))
-//   .catch((err) => {
-//     switch (err.name) {
-//       case 'ValidationError':
-//         return res.status(BAD_REQUEST)
-//           .send({ message: 'Переданы некорректные данные' });
-//       default:
-//         return res.status(INTERNAL_SERVER_ERROR)
-//           .send({ message: 'На сервере произошла ошибка' });
-//     }
-//   });
+const createEvent = (req, res) => Event.create(
+  { name: req.body.name, link: req.body.link, owner: req.user._id },
+)
+  .then((event) => res.status(200).send(event))
+  .catch((err) => {
+    switch (err.name) {
+      case 'ValidationError':
+        return res.status(BAD_REQUEST)
+          .send({ message: 'Переданы некорректные данные' });
+      default:
+        return res.status(INTERNAL_SERVER_ERROR)
+          .send({ message: 'На сервере произошла ошибка' });
+    }
+  });
 //
 // const deleteCard = (req, res) => Card.findByIdAndRemove(
 //   { _id: req.params.cardId },
@@ -95,4 +95,5 @@ const getEvents = (req, res) => Event.find({})
 
 module.exports = {
   getEvents,
+  createEvent,
 };
