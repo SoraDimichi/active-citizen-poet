@@ -17,6 +17,9 @@ module.exports = {
         allowForLoopAfterthoughts: true,
       },
     ],
-    'no-underscore-dangle': ['error', { allow: ['_id'] }],
+    'no-underscore-dangle': ['error', {
+      allow: ['_id'],
+      allowAfterThis: true,
+    }],
   },
 };
