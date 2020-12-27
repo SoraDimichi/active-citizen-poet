@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const cors = require('cors');
-const usersRouter = require('./routes/users');
 const eventsRouter = require('./routes/events');
 
 const versesRouter = require('./routes/verses');
@@ -30,7 +29,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/', versesRouter);
-app.use('/', usersRouter);
 app.use('/', eventsRouter);
 
 app.use('*', (req, res) => res.status(404)
