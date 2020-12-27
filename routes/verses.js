@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
 const {
-  getVerses,
+  getRandomVerse,
 } = require('../controllers/verses');
 
-router.get('/verses', getVerses);
+router.get('/verse', getRandomVerse);
 
 module.exports = router;

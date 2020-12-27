@@ -20,14 +20,8 @@ const eventSchema = new mongoose.Schema({
   verse: {
     type: String,
   },
-
-  followers: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'user',
-    default: [],
-  },
   date: {
-    type: Date,
+    type: String,
   },
   createdAt: {
     type: Date,
