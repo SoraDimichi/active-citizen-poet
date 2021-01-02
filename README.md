@@ -1,3 +1,4 @@
+![picture](https://raw.githubusercontent.com/SoraDimichi/active-citizen-poet-2025-frontend/3d0eecad301038db6459b62f47cb1c109c6d8f89/src/images/main_picture.svg)
 # Добротворение (бэкенд)
 
 Портал для создания анонимных гражданских инициатив.
